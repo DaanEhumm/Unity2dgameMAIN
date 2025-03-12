@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Mijn DIngen/scenes/StartScreen.unity
+    guid: 7c6a1db1b7e8b1d41b8a91c2a5f1f2cc
+  - enabled: 1
+    path: Assets/Mijn DIngen/scenes/Level1.unity
+    guid: 9ffbecdeac1356b4190a726a8470d3c0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

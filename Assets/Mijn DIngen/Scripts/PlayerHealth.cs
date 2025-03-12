@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public Slider healthbar;
     private Animator animator;
+    public Text gameovertext;
 
     void Start()
     {
@@ -53,6 +55,16 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Speler is dood!");
         animator.SetTrigger("Death");
+        gameovertext.gameObject.SetActive(true);
+
+
+        Invoke("ReturnToStartScreen", 4f);
+
+    }
+    private void ReturnToStartScreen()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void Heal(int amount)
