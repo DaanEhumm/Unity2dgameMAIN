@@ -10,7 +10,7 @@ public class Playermove : MonoBehaviour
     private Rigidbody2D m_body2d;
     private PlayerInput playerInput;
     private PlayerHealth playerHP;
-    public float attackRange = 1.0f;
+    private float attackRange = 1.0f;
     private Timer TimerScript;
     private Vector2 moveInput;
     private bool attackPressed;
