@@ -15191,7 +15191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2205633100886091737, guid: 27d612770f5f8854aa2f4f3ab5b9508c, type: 3}
   spawnInterval: 4
-  maxEnemies: 75
+  maxEnemies: 150
 --- !u!4 &1245398802
 Transform:
   m_ObjectHideFlags: 0
@@ -15878,7 +15878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2205633100886091737, guid: 27d612770f5f8854aa2f4f3ab5b9508c, type: 3}
   spawnInterval: 4
-  maxEnemies: 100
+  maxEnemies: 150
 --- !u!4 &1381916142
 Transform:
   m_ObjectHideFlags: 0
@@ -21708,8 +21708,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2205633100886091737, guid: 27d612770f5f8854aa2f4f3ab5b9508c, type: 3}
-  spawnInterval: 4
-  maxEnemies: 75
+  spawnInterval: 3
+  maxEnemies: 150
 --- !u!4 &1848135051
 Transform:
   m_ObjectHideFlags: 0
