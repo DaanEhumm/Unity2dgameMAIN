@@ -145,7 +145,7 @@ MonoBehaviour:
   player: {fileID: 0}
   chaseRange: 10
   attackRange: 0.7
-  stopDistance: 0.4
+  stopDistance: 0.5
   moveSpeed: 1.5
   attackCooldown: 2
   health: 100
