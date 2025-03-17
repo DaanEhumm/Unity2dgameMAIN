@@ -2,6 +2,7 @@
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Playermove : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class Playermove : MonoBehaviour
     private Rigidbody2D m_body2d;
     private PlayerInput playerInput;
     private PlayerHealth playerHP;
-    private float attackRange = 1.0f;
+    public float attackRange = 1.0f;
     private Timer TimerScript;
     private Vector2 moveInput;
     private bool attackPressed;
     private bool m_combatIdle = false;
-    private bool canAttack = true;
+    private bool canAttack = true;  
 
     void Start()
     {
@@ -47,35 +48,35 @@ public class Playermove : MonoBehaviour
             }
         }
 
-            float inputX = moveInput.x;
-            float inputY = moveInput.y;
+        float inputX = moveInput.x;
+        float inputY = moveInput.y;
 
-            if (inputX > 0)
-                transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-            else if (inputX < 0)
-                transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        if (inputX > 0)
+            transform.localScale = new Vector3(-1.0f, transform.localScale.y, transform.localScale.z);  
+        else if (inputX < 0)
+            transform.localScale = new Vector3(1.0f, transform.localScale.y, transform.localScale.z);
 
-            m_body2d.linearVelocity = new Vector2(inputX * m_speed, inputY * m_speed);
+        m_body2d.linearVelocity = new Vector2(inputX * m_speed, inputY * m_speed);
 
-            if (attackPressed)
-            {
-                m_animator.SetTrigger("Attack");
-                Attack();
-                attackPressed = false;
-            }
-            else if (Mathf.Abs(inputX) > Mathf.Epsilon || Mathf.Abs(inputY) > Mathf.Epsilon)
-            {
-                m_animator.SetInteger("AnimState", 2);
-            }
-            else if (m_combatIdle)
-            {
-                m_animator.SetInteger("AnimState", 1);
-            }
-            else
-            {
-                m_animator.SetInteger("AnimState", 0);
-            }
-        
+        if (attackPressed)
+        {
+            m_animator.SetTrigger("Attack");
+            Attack();
+            attackPressed = false;
+        }
+        else if (Mathf.Abs(inputX) > Mathf.Epsilon || Mathf.Abs(inputY) > Mathf.Epsilon)
+        {
+            m_animator.SetInteger("AnimState", 2);
+        }
+        else if (m_combatIdle)
+        {
+            m_animator.SetInteger("AnimState", 1);
+        }
+        else
+        {
+            m_animator.SetInteger("AnimState", 0);
+        }
+
     }
     void Attack()
     {
@@ -83,14 +84,14 @@ public class Playermove : MonoBehaviour
 
         canAttack = false;
 
-        LayerMask enemyLayer = LayerMask.GetMask("Enemy");  
+        LayerMask enemyLayer = LayerMask.GetMask("Enemy");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, enemyLayer);
 
-        int enemiesHit = 0;  
+        int enemiesHit = 0;
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemiesHit >= 3)  
+            if (enemiesHit >= (playerHP.HasPowerup() ? 8 : 3)) 
                 break;
 
             SkeletonHealth skeletonHealth = enemy.GetComponent<SkeletonHealth>();
@@ -100,10 +101,11 @@ public class Playermove : MonoBehaviour
 
                 if (skeletonHealth.IsDead())
                 {
-                    playerHP.Heal(5);  
+                    playerHP.Heal(5);
+                    playerHP.KillSkeleton(); 
                 }
 
-                enemiesHit++;  
+                enemiesHit++;
             }
         }
 

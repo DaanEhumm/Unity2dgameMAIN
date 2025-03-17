@@ -98,7 +98,7 @@ public class SkeletonAI : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         animator.SetTrigger("Death");
 
-        OnDeath?.Invoke();  
+        OnDeath?.Invoke();
 
         foreach (Collider2D col in GetComponents<Collider2D>())
         {
@@ -107,6 +107,7 @@ public class SkeletonAI : MonoBehaviour
 
         this.enabled = false;
     }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

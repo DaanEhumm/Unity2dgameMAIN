@@ -15,7 +15,7 @@ public class SkeletonHealth : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
         animator = GetComponent<Animator>();
 
         if (healthBarSkeleton != null)

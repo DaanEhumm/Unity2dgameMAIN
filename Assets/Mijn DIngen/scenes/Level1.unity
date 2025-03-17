@@ -10135,7 +10135,7 @@ PrefabInstance:
       objectReference: {fileID: 1300033355}
     - target: {fileID: 1015269826797034595, guid: b490d665dc8b3ad4d982f33f6ddfd495, type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1015269826797034595, guid: b490d665dc8b3ad4d982f33f6ddfd495, type: 3}
       propertyPath: gameovertext
@@ -10143,7 +10143,7 @@ PrefabInstance:
       objectReference: {fileID: 991977366}
     - target: {fileID: 1015269826797034595, guid: b490d665dc8b3ad4d982f33f6ddfd495, type: 3}
       propertyPath: currentHealth
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2661840644270006057, guid: b490d665dc8b3ad4d982f33f6ddfd495, type: 3}
       propertyPath: m_Controller
