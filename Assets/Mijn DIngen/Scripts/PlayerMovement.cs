@@ -13,7 +13,7 @@ public class Playermove : MonoBehaviour
     private PlayerHealth playerHP;
     public float attackRange = 1.0f;
     private Timer TimerScript;
-    private Vector2 moveInput;
+    private Vector2 moveInput;  
     private bool attackPressed;
     private bool m_combatIdle = false;
     private bool canAttack = true;  

@@ -17,7 +17,8 @@ GameObject:
   - component: {fileID: 7633308521752796786}
   - component: {fileID: 1015269826797034595}
   - component: {fileID: 6896456147609832921}
-  m_Layer: 7
+  - component: {fileID: 5012960909221403389}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -191,7 +192,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.025711685, y: 0.5717936}
+  m_Offset: {x: -0.025712356, y: 0.5958824}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -201,7 +202,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 1
-  m_Size: {x: 0.42148197, y: 1.1603566}
+  m_Size: {x: 0.4214833, y: 1.0211487}
   m_EdgeRadius: 0
 --- !u!114 &7633308521752796786
 MonoBehaviour:
@@ -245,9 +246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7775671e20d593147a7d39453bbfdaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
-  currentHealth: 200
+  maxHealth: 150
+  currentHealth: 150
   healthbar: {fileID: 0}
+  gameovertext: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!61 &6896456147609832921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -282,7 +285,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.016958863, y: 0.39979744}
+  m_Offset: {x: -0.016958863, y: 0.6026039}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -292,5 +295,18 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5297826, y: 0.6605339}
+  m_Size: {x: 0.5297826, y: 1.0810394}
   m_EdgeRadius: 0
+--- !u!114 &5012960909221403389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8353158984756837612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ff0af757739d74aa0a813df533a1fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
